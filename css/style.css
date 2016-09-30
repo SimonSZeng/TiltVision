@@ -1,0 +1,190 @@
+html {
+	background: url(../img/back.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+
+body{
+	background-color: transparent;
+}
+
+#container{
+	height: 100%;
+	position: relative;
+}
+
+.searchIcon:hover{
+	cursor: pointer;
+}
+
+.summonerSearch{
+	width: 300px;
+	margin: auto;
+	position: absolute;
+	top: 70vh;
+	left: calc(50% - 162px);
+}
+
+#mainLogo img{
+	width: 90%;
+	max-width: 650px;
+	display: block;
+	margin: auto;
+	padding-top: 50px;
+}
+
+.summonerContainer{
+	background-color: white;
+	max-width: 1200px;
+	width: 100%;
+	margin: auto;
+}
+
+.championOverview{
+	background-color: rgba(255,255,255,0.9);
+	height: 400px;
+	text-align: center;
+}
+
+.championOverview:hover{
+	cursor: pointer;
+	background-color: rgba(255,255,255,0.95);
+}
+
+.championOverview img{
+	width: 120px;
+	display: block;
+	margin: 37px auto 37px auto;
+}
+
+#summonerIcon{
+	width: 120px;
+	display: block;
+	margin: 70px auto 37px auto;
+}
+
+.championOverview svg{
+	position: absolute;
+	top: 65px;
+	left: calc(50% - 90px);
+}
+
+#summonerDetail{
+	margin-bottom: 25px; 
+	background-color: white;
+	max-width: 1200px;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.won{
+	color: #64aedf;
+	font-style: bold;
+	font-weight: 700;
+}
+
+.lost{
+	color: #cd817c;
+	font-style: bold;
+	font-weight: 700;
+}
+
+#lp{
+	color: #ae00ae;
+	font-style: bold;
+	font-weight: 700;
+}
+
+[class*="col-"] {
+    background-clip: padding-box;
+    border: 5px solid transparent;
+}
+
+.summoner{
+	background-color: white;
+	height: 300px;
+}
+
+.search{
+	background-color: white;
+	height: 300px;
+}
+
+.summonerSub{
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+
+.summonerSub h1{
+	font-style: italic;
+	font-weight: 700;
+}
+
+.summonerSub img{
+	display: block;
+	margin: auto;
+	width: 150px;
+}
+
+.summonerSub svg{
+	position: absolute;
+	top: 40px;
+	left: calc(50% - 90px);
+}
+
+.search{
+	padding: 10px;
+}
+
+#summonerSearch{
+	margin: 15px;
+	padding: 15px;
+}
+
+#championSearch{
+	margin:0 15px 0 15px;
+	padding:0 15px 0 15px;
+}
+
+.championImage{
+	width: 120px !important;
+	display: block !important;
+	margin: 70px auto 37px auto !important;
+}
+
+.championSvg svg{
+	position: absolute !important;
+	top: 40px !important;
+	left: calc(50% - 90px) !important;
+}
+
+.nohover:hover{
+	cursor: default !important;
+}
+
+#sortDropdown li{
+	text-align: center;
+}
+
+#sortDropdown li:hover{
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.1);
+}
+
+#sortButton{
+	margin-left: 5px;
+}
+
+#sortDropdown2{
+	padding: 6px 11px;
+}
+
+#unclickable:hover{
+	cursor: default;
+}

@@ -1,0 +1,55 @@
+<div id="summonerDetail">
+	<div class="col-xs-12 col-md-4 summoner">
+		<div class="summonerSub">
+			<h1> {{name}} </h1>
+			<img src="{{rankedImg}}" alt="Ranked Icon">
+			<h4> {{tier}} {{division}} <span id="lp">{{ lp }}</span> LP</h4>
+		</div>
+	</div>
+	<div class="col-xs-12 col-md-4 summoner">
+		<div class="summonerSub">
+			<img id="summonerIcon" src="http://ddragon.leagueoflegends.com/cdn/6.19.1/img/profileicon/588.png" />
+			<wr-Visual ng-winrate="{{ winRate | number:2 }}"></wr-Visual>
+			<h4>{{won / (won + lost) * 100 | number:2}}% (<span class="won">{{won}}</span> | <span class="lost">{{lost}}</span>)</h4>
+		</div>
+	</div>
+	<div class="col-xs-12 col-md-4 search">
+		<h3>Search for another summoner:</h3>
+		<div class="input-group" id="summonerSearch">
+		    <input type="text" class="form-control" placeholder="Summoner Name" ng-model="summonerID" ng-keyup="$event.keyCode == 13 && search(summonerID)"/>
+		    <span class="input-group-addon searchIcon" ng-click="search(summonerID)">
+		        <i class="glyphicon glyphicon-search"></i>
+		    </span>
+		</div>
+		<h3>Filter for champion:</h3>
+		<div class="input-group" id="championSearch">
+		    <input type="text" class="form-control" placeholder="Champion" ng-model="searchText"/>
+		    <span class="input-group-addon searchIcon" id="unclickable">
+		        <i class="glyphicon glyphicon-search"></i>
+		    </span>
+			<div class="btn-group pull-right">
+			  <button type="button" class="btn btn-default dropdown-toggle" id="sortButton" data-toggle="dropdown">
+			    Sort By <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" role="menu" id="sortDropdown">
+			    <li ng-click="sortOrder='score'">Default</li>
+		    	<li ng-click="sortOrder='won'">Wins</li>
+		    	<li ng-click="sortOrder='lost'">Losses</li>
+		    	<li ng-click="sortOrder='winRate'">Win Rate</li>
+		    	<li ng-click="sortOrder='loseRate'">Lose Rate</li>
+			  </ul>
+			</div>
+		</div>
+	</div>
+		
+</div>
+<div class="summonerContainer" >
+	<div ng-repeat="champion in champions | orderObjectBy: sortOrder:true | filter:searchText" ng-click="ChampionDetail(champion.name)" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 championOverview">
+		<h1>{{ champion.name }}</h1>
+		<img ng-src="{{ images[champion.name] }}" />
+		<h4>K/D/A: {{ champion.kills / (champion.won + champion.lost) | number:2 }} / {{ champion.deaths / (champion.won + champion.lost) | number:2 }} 
+		/ {{ champion.assists / (champion.won + champion.lost) | number:2 }}</h4>
+		<h4>Win Rate: {{ champion.winRate * 100 | number:1 }}% (<span class="won">{{champion.won}}</span> | <span class="lost">{{champion.lost}}</span>)</h4>
+		<wr-Visual ng-winrate="{{ champion.winRate | number:2 }}"></wr-Visual>
+	</div>
+</div>
